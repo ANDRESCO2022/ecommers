@@ -1,0 +1,22 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.products__modal{
+    position:fixed;
+    top: 55px;
+    bottom: 0;
+    right: 0;
+    background:#fff;
+    box-shadow:2px 2px 8px  rgba(0,0,0,.2);
+    padding:30px;
+    z-index: 1;
+    width: 270px;
+    transition: 1s;
+    transform:translateX(250px);
+    overflow:auto;
+}
+.open{
+    transform: translateX(0)
+}

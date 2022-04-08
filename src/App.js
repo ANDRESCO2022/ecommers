@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import { HashRouter, Routes, Route } from "react-router-dom";
+import {ProductNew,Favorites,Home} from './pages';
+import { LoadingScreen, Navbar } from './components';
+import { useSelector } from 'react-redux';
 
 function App() {
+
+  const isLoading = useSelector(state=>state.isLoading)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <HashRouter>
+
+     <Navbar/> 
+      {isLoading && <LoadingScreen/>}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/products/:id" element={<ProductNew/>} />
+          <Route path="/favorites" element={<Favorites />} />
+        </Routes>
+      </HashRouter>
     </div>
   );
 }
