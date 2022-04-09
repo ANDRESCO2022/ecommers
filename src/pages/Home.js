@@ -71,12 +71,12 @@ const Home = () => {
                     {productItem.price}
                   </li>
                 </div>
+                  <button className="list__block__add" >
+                    <b>
+                      <i className="fa-solid fa-cart-plus"></i>
+                    </b>
+                  </button>
               </Link>
-              <button className="list__block__add">
-                <b>
-                  <i className="fa-solid fa-cart-plus"></i>
-                </b>
-              </button>
             </ul>
           ))
         )}

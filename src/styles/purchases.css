@@ -14,18 +14,43 @@
     
 }
 .container__purchases{
-         border: 1px solid rgb(179, 175, 175);
-         margin: 5px;
-         width: 70%;
-         margin-bottom: 30px;
-         border-radius: 5px;
-         height: auto;
-         display: flex;
-         flex-direction: column;
-         align-items: center;
-         padding: 10px;
-         margin-top: 30px;
-        
+     border: 1px solid rgb(179, 175, 175);
+     margin: 5px;
+     width: 70%;
+     margin-bottom: 30px;
+     border-radius: 5px;
+     height: auto;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     padding: 10px;
+     margin-top: 30px;
+     
+}
+.home__ecommers{
+          text-decoration: none;
+          color: rgb(96, 96, 100);
+          font-size: 19px;
+          margin: auto;
+          display: flex;
+          margin-left: 10px;
+}
+.home__ecommers__rute{
+     text-decoration: none;
+     color: initial;
+     font-size: 19px;
+     margin: auto
+
+}
+.point__ecommers{
+       width: 10px;
+       height: 10px;
+       border-radius: 50%;
+       background: #de2a1d;
+       display: flex;
+       margin-top: 10px;
+       margin-left: 10px;
+       margin-right: 5px;
 }
 .container__purchases a
  {

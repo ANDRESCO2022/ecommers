@@ -32,6 +32,13 @@ const ProductNew = () => {
    }
     return (
       <div className="container__detail">
+        <div className="home__ecommers">
+          <a href="#/" className="home__ecommers__rute">
+            Home
+          </a>
+          <div className="point__ecommers"></div>
+          <b>{productsFound.title}</b>
+        </div>
         <div className="container__select">
           <div className="container__galery">
             <img src={productsFound.productImgs[0]} alt="Product_img" />
@@ -40,36 +47,33 @@ const ProductNew = () => {
             <h1>{productsFound.title}</h1>
             <div className="container__row">
               <div className="product__conter">
-                      <div className="product__post">
+                <div className="product__post">
+                  <div>
+                    <span>price:</span>
+                    <br />
+                    <span>{productsFound.price}</span>
+                  </div>
+                  <span> quantity: </span>
+                  <div className="product__number">
+                    <br />
 
+                    <button
+                      onClick={() => setCounter(counter - 1)}
+                      disabled={counter <= 1}
+                    >
+                      <b>
+                        <i className="fa-solid fa-minus"></i>
+                      </b>
+                    </button>
 
-                          <div>
-                            <span>price:</span>
-                            <br />
-                            <span>{productsFound.price}</span>
-                          </div>
-                          <span> quantity: </span>
-                          <div className="product__number">
-                            <br />
-                          
-                              <button
-                                onClick={() => setCounter(counter - 1)}
-                                disabled={counter <= 1}
-                              >
-                                <b>
-                                  <i className="fa-solid fa-minus"></i>
-                                </b>
-                              </button>
-                          
-                            <div>{counter}</div>
-                            
-                              <button onClick={() => setCounter(counter + 1)}>
-                                <b>
-                                  <i className="fa-solid fa-plus"></i>
-                                </b>
-                              </button>
-                      
-                     </div>
+                    <div>{counter}</div>
+
+                    <button onClick={() => setCounter(counter + 1)}>
+                      <b>
+                        <i className="fa-solid fa-plus"></i>
+                      </b>
+                    </button>
+                  </div>
                 </div>
                 <button onClick={addProduct} className="add_product">
                   add to cart

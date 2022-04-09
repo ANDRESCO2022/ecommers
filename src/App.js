@@ -12,6 +12,7 @@ function App() {
       <HashRouter>
 
      <Navbar/> 
+     
       {isLoading && <LoadingScreen/>}
         <Routes>
           <Route path="/" element={<Home />} />

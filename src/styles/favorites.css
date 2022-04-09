@@ -6,7 +6,7 @@
 
 .products__modal {
     position: fixed;
-    top: 55px;
+    top: 40px;
     bottom: 0;
     right: 0;
     background: #fff;
@@ -26,7 +26,6 @@
 .product__cart {
     border: 1px solid rgb(179, 175, 175);
     margin: 5px;
-    width: 100%;
     margin-bottom: 30px;
     border-radius: 5px;
     height: 160px;
@@ -61,7 +60,7 @@
     margin: auto;
     border: 0;
     color: #de2a1d;
-    width: 60px;
+    width: 50px;
     right: 0;
     margin-left: 120px;
     background: #fff;
@@ -71,4 +70,14 @@ h3 {
     display: flex;
     justify-content: center;
 
+}
+.checkout__product{
+    color: #ffffff;
+    background: #de2a1d;
+    width: 90%;
+    border: none;
+    height: 50px;
+    font-size: 19px;
+    margin-bottom: 10px;
+    margin-left: 10px;
 }

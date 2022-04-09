@@ -97,10 +97,10 @@ export const addFavoritesThunk = products => {
 export const getFavoritesThunk =() => {
   return (dispatch) => {
     dispatch(setIsLoading(true));
-    return axios.get(
-       "https://ecommerce-api-react.herokuapp.com/api/v1/cart", getConfig() )
-        .then((res) => dispatch(setFavorites(res.data.data.cart.products)))
-       .finally(() => dispatch(setIsLoading(false)));
+    return axios
+      .get("https://ecommerce-api-react.herokuapp.com/api/v1/cart", getConfig())
+      .then((res) => dispatch(setFavorites(res.data.data.cart.products)))
+      .finally(() => dispatch(setIsLoading(false)));
   };
 };
 
@@ -122,6 +122,17 @@ export const getPurchesThunk =()=> {
         getConfig()      )
       .then((res) => dispatch(setPurches(res.data.data.purchases)))
       .finally(() => dispatch(setIsLoading(false)));
+  };
+};
+export const getMarketThunk =()=> {
+  return (dispatch) => {
+    dispatch(setIsLoading(true));
+    return axios
+      .post('https://ecommerce-api-react.herokuapp.com/api/v1/purchases', {}, getConfig())
+      .then(()=>{dispatch(getPurchesThunk());
+                dispatch(getFavoritesThunk());
+                dispatch(getProductsThunk());})
+       .finally(() => dispatch(setIsLoading(false)));
   };
 };
 
