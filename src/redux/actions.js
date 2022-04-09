@@ -3,7 +3,9 @@ export const actions = {
   setProducts: "SET_PRODUCTS",
   setIsLoading: "SET_ISLOADING",
   setCategories: "SET_CATEGORIES",
-  setFavorites: "SET_FAVORITES"
+  setFavorites: "SET_FAVORITES",
+  setPurches: "SET_PURCHES",
+ 
 };
 const getConfig = () => ({
   headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
@@ -24,6 +26,10 @@ export const setCategories = (categories) => ({
 export const setFavorites = (favorites) =>({
   type:actions.setFavorites,
   payload: favorites,
+});
+export const setPurches = (purches) =>({
+  type:actions.setPurches,
+  payload: purches,
 });
 export const getProductsThunk = () => {
   return (dispatch) => {
@@ -104,6 +110,17 @@ export const deleteFavoritesThunk =(id)=> {
     return axios
       .delete(`https://ecommerce-api-react.herokuapp.com/api/v1/cart/${id}`,getConfig())
       .then(() => dispatch(getFavoritesThunk()))
+      .finally(() => dispatch(setIsLoading(false)));
+  };
+};
+export const getPurchesThunk =()=> {
+  return (dispatch) => {
+    dispatch(setIsLoading(true));
+    return axios
+      .get(
+        "https://ecommerce-api-react.herokuapp.com/api/v1/purchases/",
+        getConfig()      )
+      .then((res) => dispatch(setPurches(res.data.data.purchases)))
       .finally(() => dispatch(setIsLoading(false)));
   };
 };
