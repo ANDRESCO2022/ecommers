@@ -75,9 +75,12 @@ const ProductNew = () => {
                     </button>
                   </div>
                 </div>
+                 
                 <button onClick={addProduct} className="add_product">
                   add to cart
                 </button>
+
+                 
               </div>
               <p className="product_description">{productsFound.description}</p>
             </div>

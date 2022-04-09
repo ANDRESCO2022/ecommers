@@ -35,6 +35,7 @@ const Navbar = () => {
           dispatch(getPurchesThunk())
     }
    
+   
     return (
       <div className="login__navbar">
         <nav className="Nav_bar">
@@ -46,18 +47,40 @@ const Navbar = () => {
               <i className="fa-solid fa-user-plus"></i>
             </b>
           </button>
-          <Link to={"/purchase"}>
-            <button className="Nav_btn" onClick={openPuches}>
+          {localStorage.getItem("token") ? (
+            <Link to={"/purchase"}>
+              <button className="Nav_btn" onClick={openPuches}>
+                <b>
+                  <i className="fa-solid fa-store"></i>
+                </b>
+              </button>
+            </Link>
+          ) : (
+            <button
+              onClick={() => setIslogin(!isLogin)}
+              className="Nav_btn"
+            >
               <b>
                 <i className="fa-solid fa-store"></i>
               </b>
             </button>
-          </Link>
-          <button onClick={openFavorites} className="Nav_btn">
-            <b>
-              <i className="fa-solid fa-cart-shopping"></i>
-            </b>
-          </button>
+          )}
+          {localStorage.getItem("token") ? (
+            <button onClick={openFavorites} className="Nav_btn">
+              <b>
+                <i className="fa-solid fa-cart-shopping"></i>
+              </b>
+            </button>
+          ) : (
+            <button
+              onClick={() => setIslogin(!isLogin)}
+              className="Nav_btn__warning"
+            >
+              <b>
+                <i className="fa-solid fa-cart-shopping"></i>
+              </b>
+            </button>
+          )}
         </nav>
 
         <form onSubmit={login} className={`login ${isLogin ? "open" : ""}`}>

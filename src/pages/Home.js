@@ -14,6 +14,7 @@ const Home = () => {
   const products = useSelector((state) => state.products);
   const categories = useSelector((state) => state.categories);
   const [headline, setHeadline] = useState("");
+  const [isCategories,setIsCategories] = useState(false)
   useEffect(() => {
     dispatch(getCategoriesThunk());
     dispatch(getProductsThunk());
@@ -38,7 +39,13 @@ const Home = () => {
             </b>
           </button>
         </form>
-        <div className="block_filterProduct">
+        <button onClick={() => setIsCategories(!isCategories)} className="filter__categories__condition">
+          <b>
+            <i class="fa-solid fa-filter"></i>
+          </b>
+        </button>
+        <div  className={ `btn__filter_fixed ${isCategories ? 'open': ''}`}>
+        
           {categories.map((category) => (
             <button
               key={category.id}

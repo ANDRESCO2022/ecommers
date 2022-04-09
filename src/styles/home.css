@@ -21,7 +21,14 @@
     background: border-box;
     color: rgb(184, 176, 176);
 }
-
+.Nav_btn__warning{
+     border: none;
+     height: 50px;
+     margin-left: 2rem;
+     border: 0;
+     background: border-box;
+     color: rgb(184, 176, 176);
+}
 .Nav__container {
     color: #de2a1d;
 }
@@ -83,6 +90,31 @@
     height: 30px;
 
 }
+.btn__filter_fixed {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: #fff;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, .2);
+    padding: 30px;
+    z-index: 1;
+    width: 270px;
+    transition: 1s;
+    transform: translateX(300px);
+    overflow: auto;
+}
+
+.open {
+    transform: translateX(0)
+}
+.filter__categories__condition{
+      background: #ffff;
+      margin-top: 30px;
+      border: none;
+      width: 100%;
+     
+}
 
 .container__default {
 
@@ -133,7 +165,7 @@
 }
 
 .list__block__card {
-    background: rgb(249, 249, 253);
+    background:#ffffff;
     height: auto;
     margin: 3rem;
     border: 1px solid rgb(179, 175, 175);
@@ -216,7 +248,7 @@ h2 {
     }
 
     .list__block__card {
-        background: rgb(249, 249, 253);
+        background: #ffffff;
         height: auto;
         margin: 2rem;
         border: 1px solid rgb(179, 175, 175);
