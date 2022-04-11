@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope&display=swap');
 *{
     margin:0;
     padding:0;
@@ -8,6 +9,8 @@
       align-content: center;
       align-items: center;
       flex-direction: column;
+       font-family: 'Manrope',
+       sans-serif;
 }
 .container__galery img{
         align-items: center;
@@ -40,7 +43,8 @@
     text-decoration: none;
     color: initial;
     font-size: 19px;
-    margin: auto
+    margin: auto;
+    color:grey;
 }
 
 .point__ecommers {

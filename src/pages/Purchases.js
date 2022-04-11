@@ -28,12 +28,26 @@ const Purchases = () => {
                  <div className="cart__purchases__conter">
                    {params.productsInCart.quantity}
                  </div>
-                 <div>{params.price}</div>
+                 <div className="cart_purchases__price">{params.price}</div>
                </ul>
              </Link>
            ))}
          </div>
        ))}
+       <footer className="footer__container">
+         <div className="copyrigth">© Academlo ||Andres Cordoba 2022</div>
+         <div className="copyrigth__icons">
+           <a href="https://www.linkedin.com/in/andres-cordoba-sistemas/">
+             <i className="fa-brands fa-linkedin-in"></i>
+           </a>
+           <a href="https://github.com/ANDRESCO2022">
+             <i className="fa-brands fa-github"></i>
+           </a>
+           <a href="https://www.youtube.com/c/academlo">
+             <i className="fa-brands fa-youtube"></i>
+           </a>
+         </div>
+       </footer>
      </div>
    );
 };

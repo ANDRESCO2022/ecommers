@@ -75,12 +75,10 @@ const ProductNew = () => {
                     </button>
                   </div>
                 </div>
-                 
+
                 <button onClick={addProduct} className="add_product">
                   add to cart
                 </button>
-
-                 
               </div>
               <p className="product_description">{productsFound.description}</p>
             </div>
@@ -106,6 +104,20 @@ const ProductNew = () => {
             </ul>
           ))}
         </div>
+        <footer className="footer__container">
+          <div className="copyrigth">© Academlo ||Andres Cordoba 2022</div>
+          <div className="copyrigth__icons">
+            <a href="https://www.linkedin.com/in/andres-cordoba-sistemas/">
+              <i className="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/ANDRESCO2022">
+              <i className="fa-brands fa-github"></i>
+            </a>
+            <a href="https://www.youtube.com/c/academlo">
+              <i className="fa-brands fa-youtube"></i>
+            </a>
+          </div>
+        </footer>
       </div>
     );
 };
