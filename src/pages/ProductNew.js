@@ -12,7 +12,7 @@ const ProductNew = () => {
     const  products = useSelector(state=> state.products);
     const [productsFilter, setProductsFilter]=useState([])
     const [counter, setCounter] = useState(0);
-    const  productsFound= products.find(productItem => productItem.id === Number(id))
+    const  productsFound = products.find(productItem => productItem.id === Number(id))
     useEffect(() => dispatch(getProductsThunk()),[dispatch])
    useEffect(() =>{
        if(productsFound){
@@ -37,21 +37,21 @@ const ProductNew = () => {
             Home
           </a>
           <div className="point__ecommers"></div>
-          <b>{productsFound.title}</b>
+          <b>{productsFound ? productsFound.title : ""}</b>
         </div>
         <div className="container__select">
           <div className="container__galery">
-            <img src={productsFound.productImgs[0]} alt="Product_img" />
+            <img src={productsFound ? productsFound.productImgs[0] : ""} alt="Product_img" />
           </div>
           <div className="container__info">
-            <h1>{productsFound.title}</h1>
+            <h1>{ productsFound ? productsFound.title:""}</h1>
             <div className="container__row">
               <div className="product__conter">
                 <div className="product__post">
                   <div>
                     <span>price:</span>
                     <br />
-                    <span>{productsFound.price}</span>
+                    <span>{productsFound ? productsFound.price:""}</span>
                   </div>
                   <span> quantity: </span>
                   <div className="product__number">
@@ -80,11 +80,11 @@ const ProductNew = () => {
                   add to cart
                 </button>
               </div>
-              <p className="product_description">{productsFound.description}</p>
+              <p className="product_description">{productsFound ? productsFound.description:""}</p>
             </div>
           </div>
         </div>
-        <div className="block__products">
+           <div className="block__products">
           {productsFilter.map((productItem) => (
             <ul className="block__card" key={productItem.id}>
               <Link to={`/products/${productItem.id}`}>
